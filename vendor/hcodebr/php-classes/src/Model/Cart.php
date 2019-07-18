@@ -171,7 +171,7 @@ class Cart extends Model {
 				Cart::clearMsgError();
 			}
 			$this->setnrdays($result->PrazoEntrega);
-			$this->setvlfreight(Cart::formatValueToDecimal($result->Valor));
+			$this->setvlfreight(Cart::formatValueToDecimal(0,00));
 			$this->setdeszipcode($nrzipcode);
 			$this->save();
 			return $result;
