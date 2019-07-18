@@ -8,7 +8,7 @@ class Mailer {
 	
 	const USERNAME = "suporte@niltonorquideas.com.br";
 	const PASSWORD = "euamoeu123";
-	const NAME_FROM = "Nilton Orquideas";
+	const NAME_FROM = "Init Store";
 
 	private $mail;
 
