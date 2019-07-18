@@ -1,0 +1,1 @@
+<?php if(!class_exists('Rain\Tpl')){exit;}?><li><a href="/categories/8">Fones</a></li><li><a href="/categories/6">Relógios</a></li><li><a href="/categories/10">Relógios femininos</a></li><li><a href="/categories/9">Relógios masculinos</a></li><li><a href="/categories/5">Smart Watch</a></li>

@@ -1,0 +1,118 @@
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>Carrinho de Compras</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- End Page title area -->
+
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-md-12">
+                <div class="product-content-right">
+                    <div class="woocommerce">
+
+                        <form action="/checkout">
+                            
+                            {if="$error != ''"}
+                            <div class="alert alert-danger" role="alert">
+                            {$error}
+                            </div>
+                            {/if}
+
+                            <table cellspacing="0" class="shop_table cart">
+                                <thead>
+                                    <tr>
+                                        <th class="product-remove">Remover</th>
+                                        <th class="product-thumbnail">Imagem</th>
+                                        <th class="product-name">Produto</th>
+                                        <th class="product-price">Preço</th>
+                                        <th class="product-subtotal">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {loop="$products"}
+                                    <tr class="cart_item">
+                                        <td class="product-remove">
+                                            <a title="Remove this item" class="remove" href="/cart/{$value.idproduct}/remove">×</a> 
+                                        </td>
+
+                                        <td class="product-thumbnail">
+                                            <a href="/products/{$value.desurl}"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="{$value.desphoto}"></a>
+                                        </td>
+
+                                        <td class="product-name">
+                                            <a href="/products/{$value.desurl}">{$value.desproduct}</a> 
+                                        </td>
+
+                                        <td class="product-price">
+                                            <span class="amount">R${function="formatPrice($value.vlprice)"}</span> 
+                                        </td>
+
+
+                                        <td class="product-subtotal">
+                                            <span class="amount">R${function="formatPrice($value.vltotal)"}</span> 
+                                        </td>
+                                    </tr>
+                                    {/loop}
+                                </tbody>
+                            </table>
+
+                            <div class="cart-collaterals">
+
+                               
+
+
+                                <div class="cart_totals ">
+
+                                    <h2>Resumo da Compra</h2>
+
+                                    <table cellspacing="0">
+                                        <tbody>
+                                            <tr class="cart-subtotal">
+                                                <th>Subtotal</th>
+                                                <td><span class="amount">R${function="formatPrice($cart.vlsubtotal)"}</span></td>
+                                            </tr>
+
+                                            <tr class="shipping">
+                                                <th>Frete OFF</th>
+                                                <td>R${function="formatPrice($cart.vlfreight)"}{if="$cart.nrdays > 0"} <small>prazo de {$cart.nrdays} dia(s)</small>{/if}</td>
+                                            </tr>
+
+                                            <tr class="order-total">
+                                                <th>Total</th>
+                                                <td><strong><span class="amount">R${function="formatPrice($cart.vltotal)"}</span></strong> </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="pull-right">
+                                <input type="submit" value="Finalizar Compra" name="proceed" class="checkout-button button alt wc-forward">
+                            </div>                      
+                        </form>
+                        <div class="pull-left">
+                                    <a href="/products"><input type="submit" href="/products" value="Continuar Comprando" name="proceed" class="checkout-button button alt wc-forward"></a>
+                            </div>
+
+
+                        
+                        
+
+                    </div>                        
+                </div>                    
+            </div>
+        </div>
+    </div>
+</div>
